@@ -23,25 +23,26 @@
                         sans: ['Inter', 'sans-serif'],
                         serif: ['Merriweather', 'serif'], // Подключили шрифт с засечками
                     },
-                    // Цветовая палитра "Пыльно-голубой" (по референсу)
+                                        // Цветовая палитра "Элегантный голубой" (по новому референсу)
                     colors: {
-                        'ice-50': '#f7f9fa', // очень светлый фон
-                        'deep-blue-900': '#8ea4b5', // пыльно-голубой акцент (кнопки, заголовки)
-                        'lilac-300': '#b4c5d2', // светло-пыльно-голубой
-                        'lilac-100': '#e6edf2', // нежный фон карточек
+                        'ice-50': '#f8fafc', 
+                        'deep-blue-900': '#729cb3', // Более насыщенный и читаемый голубой акцент
+                        'lilac-300': '#9ebcd1', 
+                        'lilac-100': '#eef3f7', 
                         blue: {
-                            50: '#f7f9fa',
-                            100: '#e6edf2',
-                            200: '#d1dee6',
-                            300: '#b4c5d2',
-                            800: '#758d9f', // ховер для кнопок
+                            50: '#f8fafc',
+                            100: '#eef3f7',
+                            200: '#dbe5ee',
+                            300: '#9ebcd1',
+                            800: '#5a8298', 
                         },
                         purple: {
-                            50: '#e6edf2', // заменяем фиолетовые пятна на пыльно-голубые
+                            50: '#eef3f7', 
                         },
                         slate: {
-                            800: '#334155', // основной текст
-                            900: '#263445', // фон футера (мягкий темно-серо-синий)
+                            600: '#475569',
+                            800: '#1e293b', 
+                            900: '#0f172a', 
                         }
                     }
                 }
@@ -65,30 +66,30 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="#" class="font-serif text-2xl font-bold text-deep-blue-900 tracking-tight">
+                    <a href="#" class="font-serif text-2xl font-medium text-deep-blue-900 tracking-tight">
                         Лекторий <span class="font-light italic">Юлии и Дарьи</span>
                     </a>
                 </div>
                 <!-- Навигация (скрыта на мобильных) -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#pains" class="text-slate-600 hover:text-deep-blue-900 font-medium transition-colors">Для
+                    <a href="#pains" class="text-slate-700 hover:text-deep-blue-900 font-medium transition-colors">Для
                         кого</a>
-                    <a href="#about" class="text-slate-600 hover:text-deep-blue-900 font-medium transition-colors">О
+                    <a href="#about" class="text-slate-700 hover:text-deep-blue-900 font-medium transition-colors">О
                         нас</a>
-                    <a href="#program" class="text-slate-600 hover:text-deep-blue-900 font-medium transition-colors">Наш
+                    <a href="#program" class="text-slate-700 hover:text-deep-blue-900 font-medium transition-colors">Наш
                         подход</a>
                     <a href="#tariffs"
-                        class="text-slate-600 hover:text-deep-blue-900 font-medium transition-colors">Программы</a>
+                        class="text-slate-700 hover:text-deep-blue-900 font-medium transition-colors">Программы</a>
                 </nav>
                 <div class="hidden md:flex">
                     <a href="#tariffs"
-                        class="bg-deep-blue-900 text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-800 transition-colors shadow-md">
+                        class="bg-transparent border border-deep-blue-900 text-deep-blue-900 px-6 py-2.5 rounded-full font-medium hover:bg-deep-blue-900 hover:text-white transition-all">
                         Смотреть курсы
                     </a>
                 </div>
                 <!-- Мобильное меню (Кнопка) -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-deep-blue-900 focus:outline-none">
+                    <button id="mobile-menu-btn" class="text-slate-700 hover:text-deep-blue-900 focus:outline-none">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
@@ -105,7 +106,7 @@
                 <a href="#about" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-deep-blue-900 hover:bg-ice-50 transition-colors">О нас</a>
                 <a href="#program" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-deep-blue-900 hover:bg-ice-50 transition-colors">Наш подход</a>
                 <a href="#tariffs" class="block px-3 py-3 rounded-md text-base font-medium text-slate-700 hover:text-deep-blue-900 hover:bg-ice-50 transition-colors">Программы</a>
-                <a href="#tariffs" class="block mt-4 text-center bg-deep-blue-900 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-800 transition-colors shadow-md">Смотреть курсы</a>
+                <a href="#tariffs" class="block mt-4 text-center bg-transparent border border-deep-blue-900 text-deep-blue-900 px-6 py-3 rounded-full font-medium hover:bg-deep-blue-900 hover:text-white transition-all">Смотреть курсы</a>
             </div>
         </div>
             </div>
@@ -119,18 +120,18 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="text-center lg:text-left">
                         <h1
-                            class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight mb-6">
+                            class="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium text-slate-900 leading-tight mb-6">
                             Нейробиология и КПТ: <br class="hidden lg:block"><span
                                 class="text-deep-blue-900 italic font-light">Научный подход к женскому выгоранию,
                                 тревоге и СДВГ.</span>
                         </h1>
-                        <p class="text-lg sm:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+                        <p class="text-lg sm:text-xl text-slate-700 mb-8 max-w-2xl mx-auto lg:mx-0">
                             Помогаем женщинам с СДВГ, тревогой и выгоранием вернуть контроль над жизнью. Бережно, научно
                             и на собственном опыте.
                         </p>
                         <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
                             <a href="#tariffs"
-                                class="bg-deep-blue-900 text-white px-8 py-4 rounded-full font-medium hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl text-lg flex items-center justify-center">
+                                class="bg-white border border-deep-blue-900 text-deep-blue-900 px-8 py-4 rounded-full font-medium hover:bg-deep-blue-900 hover:text-white transition-all shadow-md hover:shadow-lg tracking-wide uppercase text-sm text-lg flex items-center justify-center">
                                 Выбрать программу
                             </a>
                         </div>
@@ -167,7 +168,7 @@
         <section id="pains" class="py-20 sm:py-28 relative">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Знакомо ли вам?</h2>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-light text-slate-900 mb-4 uppercase tracking-widest">Знакомо ли вам?</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -181,8 +182,8 @@
                                     d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-slate-800 mb-3">Тревога как норма жизни.</h3>
-                        <p class="text-slate-600 leading-relaxed">Вы привыкли к тахикардии, ожиданию худшего и мыслям,
+                        <h3 class="font-serif text-xl font-medium text-slate-900 mb-3">Тревога как норма жизни.</h3>
+                        <p class="text-slate-700 leading-relaxed">Вы привыкли к тахикардии, ожиданию худшего и мыслям,
                             которые невозможно выключить. Выживание заменило вам жизнь.</p>
                     </div>
                     <!-- Карточка 2 -->
@@ -195,8 +196,8 @@
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-slate-800 mb-3">Иллюзия «я не справляюсь».</h3>
-                        <p class="text-slate-600 leading-relaxed">Ощущение, что вы плохая мать, плохая жена и «не такой»
+                        <h3 class="font-serif text-xl font-medium text-slate-900 mb-3">Иллюзия «я не справляюсь».</h3>
+                        <p class="text-slate-700 leading-relaxed">Ощущение, что вы плохая мать, плохая жена и «не такой»
                             человек. Хаос в голове и постоянные попытки быть «удобной».</p>
                     </div>
                     <!-- Карточка 3 -->
@@ -210,8 +211,8 @@
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-slate-800 mb-3">Выгорание и бессилие.</h3>
-                        <p class="text-slate-600 leading-relaxed">Когда простые вещи отнимают все силы. Когда хочется,
+                        <h3 class="font-serif text-xl font-medium text-slate-900 mb-3">Выгорание и бессилие.</h3>
+                        <p class="text-slate-700 leading-relaxed">Когда простые вещи отнимают все силы. Когда хочется,
                             чтобы все просто оставили вас в покое, а сил нет даже на отдых.</p>
                     </div>
                 </div>
@@ -222,7 +223,7 @@
         <section id="about" class="py-20 sm:py-28 bg-white/50 border-y border-blue-50 relative">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Кто мы</h2>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-light text-slate-900 mb-4 uppercase tracking-widest">ОБ АВТОРАХ</h2>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -254,7 +255,7 @@
                     <div class="lg:col-span-7 space-y-10">
                         <!-- Эксперт 1 -->
                         <div>
-                            <h3 class="font-serif text-2xl font-bold text-slate-800 mb-1">Юлия Гарипова</h3>
+                            <h3 class="font-serif text-2xl font-medium text-slate-900 mb-1">Юлия Гарипова</h3>
                             <p class="text-lg font-semibold mb-4 drop-shadow-sm" style="color: #b070c0;">КПТ-терапевт
                             </p>
                             <div
@@ -262,7 +263,7 @@
                                 <!-- Кавычка -->
                                 <span
                                     class="absolute -top-6 -left-2 text-7xl text-lilac-100 font-serif leading-none">"</span>
-                                <p class="text-slate-600 leading-relaxed relative z-10 italic">
+                                <p class="text-slate-700 leading-relaxed relative z-10 italic">
                                     У меня СДВГ. У моей дочери — РАС. Я прошла через послеродовую депрессию и панические
                                     атаки. Я знаю эти состояния не только по учебникам. Моя задача — стать для вас той
                                     самой спокойной опорой, чтобы вы поняли: жизнь может быть другой.
@@ -272,7 +273,7 @@
 
                         <!-- Эксперт 2 -->
                         <div>
-                            <h3 class="font-serif text-2xl font-bold text-slate-800 mb-1">Дарья Плахина</h3>
+                            <h3 class="font-serif text-2xl font-medium text-slate-900 mb-1">Дарья Плахина</h3>
                             <p class="text-lg font-semibold mb-4 drop-shadow-sm" style="color: #b070c0;">Биолог,
                                 преподаватель (14 лет стажа)</p>
                             <div
@@ -280,7 +281,7 @@
                                 <!-- Кавычка -->
                                 <span
                                     class="absolute -top-6 -left-2 text-7xl text-lilac-100 font-serif leading-none">"</span>
-                                <p class="text-slate-600 leading-relaxed relative z-10 italic">
+                                <p class="text-slate-700 leading-relaxed relative z-10 italic">
                                     Развеиваю антинаучный бред и мифы с помощью доказательной медицины. Говорю о сложных
                                     вещах — от нейромедиаторов и сна до либидо и работы гормонов — так, чтобы вы наконец
                                     поняли собственное тело. Никакой эзотерики, только суровые научные факты, которые
@@ -311,7 +312,7 @@
         <section id="program" class="py-20 sm:py-28 bg-ice-50/50 border-t border-blue-50 relative">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Наш подход</h2>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-light text-slate-900 mb-4 uppercase tracking-widest">Наш подход</h2>
                 </div>
 
                 <div class="space-y-6">
@@ -325,8 +326,8 @@
                                 1</div>
                         </div>
                         <div>
-                            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Диагностика без ярлыков:</h3>
-                            <p class="text-slate-600">Разбираем, где заканчивается усталость и начинается СДВГ или
+                            <h3 class="font-serif text-xl font-medium text-slate-900 mb-2">Диагностика без ярлыков:</h3>
+                            <p class="text-slate-700">Разбираем, где заканчивается усталость и начинается СДВГ или
                                 выгорание.</p>
                         </div>
                     </div>
@@ -340,8 +341,8 @@
                                 2</div>
                         </div>
                         <div>
-                            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Нейробиология стресса:</h3>
-                            <p class="text-slate-600">Понимаем, что физически происходит в мозге при тревоге.</p>
+                            <h3 class="font-serif text-xl font-medium text-slate-900 mb-2">Нейробиология стресса:</h3>
+                            <p class="text-slate-700">Понимаем, что физически происходит в мозге при тревоге.</p>
                         </div>
                     </div>
                     <!-- Шаг 3 -->
@@ -354,8 +355,8 @@
                                 3</div>
                         </div>
                         <div>
-                            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Инструменты КПТ:</h3>
-                            <p class="text-slate-600">Практики, которые возвращают фокус и снижают панику в моменте.</p>
+                            <h3 class="font-serif text-xl font-medium text-slate-900 mb-2">Инструменты КПТ:</h3>
+                            <p class="text-slate-700">Практики, которые возвращают фокус и снижают панику в моменте.</p>
                         </div>
                     </div>
                     <!-- Шаг 4 -->
@@ -368,8 +369,8 @@
                                 4</div>
                         </div>
                         <div>
-                            <h3 class="font-serif text-xl font-bold text-slate-800 mb-2">Точка опоры:</h3>
-                            <p class="text-slate-600">Учимся жить со своими особенностями, не пытаясь переделать себя
+                            <h3 class="font-serif text-xl font-medium text-slate-900 mb-2">Точка опоры:</h3>
+                            <p class="text-slate-700">Учимся жить со своими особенностями, не пытаясь переделать себя
                                 под ожидания общества.</p>
                         </div>
                     </div>
@@ -381,9 +382,9 @@
         <section class="py-20 sm:py-28 relative">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-12">
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Почему нам можно доверять?
+                    <h2 class="font-serif text-3xl sm:text-4xl font-light text-slate-900 mb-4 uppercase tracking-widest">Почему нам можно доверять?
                     </h2>
-                    <p class="text-lg text-slate-600">Мы знаем эти состояния не только по учебникам.</p>
+                    <p class="text-lg text-slate-700">Мы знаем эти состояния не только по учебникам.</p>
                 </div>
 
                 <div
@@ -413,8 +414,8 @@
         <section class="py-20 sm:py-28 bg-white/50 border-t border-blue-50 relative">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Как проходит обучение</h2>
-                    <p class="text-lg text-slate-600">Мы продумали каждый шаг, чтобы вам было комфортно</p>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-light text-slate-900 mb-4 uppercase tracking-widest">Как проходит обучение</h2>
+                    <p class="text-lg text-slate-700">Мы продумали каждый шаг, чтобы вам было комфортно</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -427,8 +428,8 @@
                                     d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                             </svg>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-slate-800 mb-3">Закрытый Telegram-канал</h3>
-                        <p class="text-slate-600">Уютное и безопасное пространство для общения, материалов и поддержки.
+                        <h3 class="font-serif text-xl font-medium text-slate-900 mb-3">Закрытый Telegram-канал</h3>
+                        <p class="text-slate-700">Уютное и безопасное пространство для общения, материалов и поддержки.
                         </p>
                     </div>
 
@@ -442,8 +443,8 @@
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-slate-800 mb-3">Научный подход без воды</h3>
-                        <p class="text-slate-600">Короткие и емкие уроки, основанные на нейробиологии и КПТ. Только
+                        <h3 class="font-serif text-xl font-medium text-slate-900 mb-3">Научный подход без воды</h3>
+                        <p class="text-slate-700">Короткие и емкие уроки, основанные на нейробиологии и КПТ. Только
                             доказательная медицина.</p>
                     </div>
 
@@ -457,8 +458,8 @@
                                 </path>
                             </svg>
                         </div>
-                        <h3 class="font-serif text-xl font-bold text-slate-800 mb-3">Ответы на вопросы</h3>
-                        <p class="text-slate-600">Мы всегда на связи, чтобы разобрать ваши ситуации и помочь
+                        <h3 class="font-serif text-xl font-medium text-slate-900 mb-3">Ответы на вопросы</h3>
+                        <p class="text-slate-700">Мы всегда на связи, чтобы разобрать ваши ситуации и помочь
                             адаптировать знания к жизни.</p>
                     </div>
                 </div>
@@ -469,8 +470,8 @@
         <section id="tariffs" class="py-20 sm:py-28 bg-ice-50/50 border-t border-blue-50 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Наши программы</h2>
-                    <p class="text-lg text-slate-600">Выберите подходящий для вас формат участия.</p>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-light text-slate-900 mb-4 uppercase tracking-widest">НАШИ ПРОГРАММЫ</h2>
+                    <p class="text-lg text-slate-700">Выберите подходящий для вас формат участия.</p>
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
@@ -482,15 +483,15 @@
                             <span
                                 class="inline-block px-3 py-1 bg-lilac-100 text-deep-blue-900 text-xs font-bold rounded-full mb-4 uppercase tracking-wider">Запись
                                 лекции</span>
-                            <h3 class="font-serif text-2xl font-bold text-slate-800 mb-2 leading-tight">«Кажется, у меня
+                            <h3 class="font-serif text-2xl font-normal text-deep-blue-900 mb-2 leading-tight uppercase tracking-wider">«Кажется, у меня
                                 СДВГ»</h3>
                             <p class="text-slate-500 text-sm">Всё, что нужно знать о СДВГ у взрослых женщин.</p>
                         </div>
                         <div class="mb-8">
-                            <span class="text-4xl font-bold text-slate-800">1 500 ₽</span>
+                            <span class="text-4xl font-medium text-slate-900">1 500 ₽</span>
                             <span class="text-slate-500"> / 15€</span>
                         </div>
-                        <ul class="space-y-4 text-slate-600 mb-10 flex-1">
+                        <ul class="space-y-4 text-slate-700 mb-10 flex-1">
                             <li class="flex items-start">
                                 <svg class="w-5 h-5 text-lilac-300 mt-0.5 mr-3 shrink-0" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
@@ -524,25 +525,25 @@
 
                     <!-- Продукт 2 -->
                     <div
-                        class="bg-deep-blue-900/95 backdrop-blur-sm p-8 sm:p-10 rounded-3xl shadow-xl flex flex-col relative border border-blue-800 h-full lg:-translate-y-4 z-10">
+                        class="bg-ice-50 p-8 sm:p-10 rounded-3xl shadow-xl flex flex-col relative border border-deep-blue-900/20 h-full lg:-translate-y-4 z-10">
                         <div
                             class="absolute top-0 right-0 bg-lilac-300 text-deep-blue-900 text-xs font-bold px-4 py-2 rounded-bl-2xl rounded-tr-3xl uppercase tracking-wider">
                             Рекомендуем
                         </div>
                         <div class="mb-6 mt-2">
                             <span
-                                class="inline-block px-3 py-1 bg-blue-800 text-lilac-100 text-xs font-bold rounded-full mb-4 uppercase tracking-wider">Цикл
+                                class="inline-block px-3 py-1 bg-deep-blue-900 text-white text-xs font-bold rounded-full mb-4 uppercase tracking-wider">Цикл
                                 лекций</span>
-                            <h3 class="font-serif text-2xl font-bold text-white mb-2 leading-tight">«Выгорание и
+                            <h3 class="font-serif text-2xl font-normal text-deep-blue-900 mb-2 leading-tight uppercase tracking-wider">«Выгорание и
                                 тревога»</h3>
-                            <p class="text-blue-200 text-sm">Глубокая проработка состояний с точки зрения КПТ и
+                            <p class="text-slate-700 text-sm">Глубокая проработка состояний с точки зрения КПТ и
                                 нейробиологии.</p>
                         </div>
                         <div class="mb-8">
-                            <span class="text-4xl font-bold text-white">4 000 ₽</span>
-                            <span class="text-blue-300"> / 40€</span>
+                            <span class="text-4xl font-medium text-slate-900">4 000 ₽</span>
+                            <span class="text-slate-500"> / 40€</span>
                         </div>
-                        <ul class="space-y-4 text-blue-50 mb-10 flex-1">
+                        <ul class="space-y-4 text-slate-700 mb-10 flex-1">
                             <li class="flex items-start">
                                 <svg class="w-5 h-5 text-lilac-300 mt-0.5 mr-3 shrink-0" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
@@ -569,7 +570,7 @@
                             </li>
                         </ul>
                         <button
-                            class="w-full bg-white text-deep-blue-900 px-6 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-colors shadow-sm">
+                            class="w-full bg-transparent border-2 border-deep-blue-900 text-deep-blue-900 px-6 py-4 rounded-xl font-medium hover:bg-deep-blue-900 hover:text-white transition-all shadow-sm">
                             Купить цикл
                         </button>
                     </div>
@@ -581,16 +582,16 @@
                         <div class="mb-6 mt-2">
                             <span
                                 class="inline-block px-3 py-1 bg-ice-50 text-deep-blue-900 text-xs font-bold rounded-full mb-4 uppercase tracking-wider">Подписка</span>
-                            <h3 class="font-serif text-2xl font-bold text-slate-800 mb-2 leading-tight">Закрытый
+                            <h3 class="font-serif text-2xl font-normal text-deep-blue-900 mb-2 leading-tight uppercase tracking-wider">Закрытый
                                 Telegram-клуб</h3>
                             <p class="text-slate-500 text-sm">Поддерживающее комьюнити и регулярные ответы на вопросы.
                             </p>
                         </div>
                         <div class="mb-8">
-                            <span class="text-4xl font-bold text-slate-800">2 000 ₽</span>
+                            <span class="text-4xl font-medium text-slate-900">2 000 ₽</span>
                             <span class="text-slate-500"> / мес (20€)</span>
                         </div>
-                        <ul class="space-y-4 text-slate-600 mb-10 flex-1">
+                        <ul class="space-y-4 text-slate-700 mb-10 flex-1">
                             <li class="flex items-start">
                                 <svg class="w-5 h-5 text-deep-blue-900 mt-0.5 mr-3 shrink-0" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
@@ -629,7 +630,7 @@
         <section class="py-20 sm:py-28 relative">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-16">
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Что говорят наши ученицы
+                    <h2 class="font-serif text-3xl sm:text-4xl font-light text-slate-900 mb-4 uppercase tracking-widest">Что говорят наши ученицы
                     </h2>
                 </div>
 
@@ -641,7 +642,7 @@
                             <path
                                 d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                         </svg>
-                        <p class="text-slate-600 leading-relaxed mb-6 italic">
+                        <p class="text-slate-700 leading-relaxed mb-6 italic">
                             «Это первый курс, который я досмотрела до конца! Никакой эзотерики и обвинений в стиле "ты
                             просто мало стараешься". Даша и Юля буквально разложили мой мозг по полочкам. Я поняла,
                             почему я срываюсь, и наконец-то смогла просто отдохнуть без чувства вины.»
@@ -651,7 +652,7 @@
                                 class="w-10 h-10 bg-lilac-100 rounded-full flex items-center justify-center text-deep-blue-900 font-bold mr-4">
                                 А</div>
                             <div>
-                                <p class="font-bold text-slate-800">Анна</p>
+                                <p class="font-medium text-slate-900">Анна</p>
                             </div>
                         </div>
                     </div>
@@ -663,7 +664,7 @@
                             <path
                                 d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                         </svg>
-                        <p class="text-slate-600 leading-relaxed mb-6 italic">
+                        <p class="text-slate-700 leading-relaxed mb-6 italic">
                             «Объяснения Даши про нейромедиаторы — это просто отвал всего! Я думала, что со мной что-то
                             не так, а оказалось, это просто химия мозга и выгорание. А практики КПТ от Юли помогают мне
                             справляться с тахикардией прямо на работе.»
@@ -673,7 +674,7 @@
                                 class="w-10 h-10 bg-ice-50 rounded-full flex items-center justify-center text-deep-blue-900 font-bold mr-4">
                                 Е</div>
                             <div>
-                                <p class="font-bold text-slate-800">Екатерина</p>
+                                <p class="font-medium text-slate-900">Екатерина</p>
                             </div>
                         </div>
                     </div>
@@ -685,7 +686,7 @@
                             <path
                                 d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                         </svg>
-                        <p class="text-slate-600 leading-relaxed mb-6 italic">
+                        <p class="text-slate-700 leading-relaxed mb-6 italic">
                             «Закрытый клуб — это моя отдушина. Очень поддерживающее комьюнити. Девочки делятся своими
                             историями, и ты понимаешь, что ты не одна такая. Эфиры каждую неделю очень терапевтичные,
                             Юля отвечает на все вопросы с такой теплотой.»
@@ -695,7 +696,7 @@
                                 class="w-10 h-10 bg-lilac-100 rounded-full flex items-center justify-center text-deep-blue-900 font-bold mr-4">
                                 О</div>
                             <div>
-                                <p class="font-bold text-slate-800">Ольга</p>
+                                <p class="font-medium text-slate-900">Ольга</p>
                             </div>
                         </div>
                     </div>
@@ -707,30 +708,30 @@
         <section class="py-20 sm:py-28 bg-white/40 border-t border-blue-50 relative">
             <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center mb-12">
-                    <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-800 mb-4">Частые вопросы</h2>
+                    <h2 class="font-serif text-3xl sm:text-4xl font-light text-slate-900 mb-4 uppercase tracking-widest">Частые вопросы</h2>
                 </div>
 
                 <div class="space-y-4">
                     <!-- Вопрос 1 -->
                     <div class="bg-white/80 p-6 rounded-2xl shadow-sm border border-slate-100">
-                        <h3 class="font-serif text-lg font-bold text-slate-800 mb-2">Будет ли запись лекций?</h3>
-                        <p class="text-slate-600">Да, все лекции доступны в записи, вы сможете пересматривать их в
+                        <h3 class="font-serif text-lg font-medium text-slate-900 mb-2">Будет ли запись лекций?</h3>
+                        <p class="text-slate-700">Да, все лекции доступны в записи, вы сможете пересматривать их в
                             удобное время и возвращаться к материалам, когда это необходимо.</p>
                     </div>
 
                     <!-- Вопрос 2 -->
                     <div class="bg-white/80 p-6 rounded-2xl shadow-sm border border-slate-100">
-                        <h3 class="font-serif text-lg font-bold text-slate-800 mb-2">Подойдет ли мне, если у меня нет
+                        <h3 class="font-serif text-lg font-medium text-slate-900 mb-2">Подойдет ли мне, если у меня нет
                             диагноза?</h3>
-                        <p class="text-slate-600">Конечно. Мы разбираем механизмы выгорания и тревоги, которые
+                        <p class="text-slate-700">Конечно. Мы разбираем механизмы выгорания и тревоги, которые
                             свойственны большинству современных женщин. Вам не нужен официальный диагноз, чтобы улучшить
                             свое качество жизни.</p>
                     </div>
 
                     <!-- Вопрос 3 -->
                     <div class="bg-white/80 p-6 rounded-2xl shadow-sm border border-slate-100">
-                        <h3 class="font-serif text-lg font-bold text-slate-800 mb-2">Как оплатить не из РФ?</h3>
-                        <p class="text-slate-600">Мы принимаем оплаты со всего мира через платформу Tribute. Вы сможете
+                        <h3 class="font-serif text-lg font-medium text-slate-900 mb-2">Как оплатить не из РФ?</h3>
+                        <p class="text-slate-700">Мы принимаем оплаты со всего мира через платформу Tribute. Вы сможете
                             безопасно оплатить доступ любой иностранной картой.</p>
                     </div>
                 </div>
@@ -740,11 +741,11 @@
         <!-- Личная терапия (Сноска перед футером) -->
         <section class="bg-lilac-100/50 py-16 border-t border-lilac-100 relative z-10">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h3 class="font-serif text-2xl font-bold text-deep-blue-900 mb-4">Ищете личную или семейную терапию?
+                <h3 class="font-serif text-2xl font-medium text-deep-blue-900 mb-4">Ищете личную или семейную терапию?
                 </h3>
-                <p class="text-slate-600 mb-8 text-lg">Юлия Гарипова берет клиентов в индивидуальную работу.</p>
+                <p class="text-slate-700 mb-8 text-lg">Юлия Гарипова берет клиентов в индивидуальную работу.</p>
                 <a href="https://t.me/yulia_garipova_psy" target="_blank"
-                    class="inline-flex items-center justify-center bg-deep-blue-900 text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-800 transition-colors shadow-sm">
+                    class="inline-flex items-center justify-center bg-transparent border-2 border-deep-blue-900 text-deep-blue-900 px-8 py-4 rounded-xl font-medium hover:bg-deep-blue-900 hover:text-white transition-all shadow-sm">
                     <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
                         <path
                             d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z" />
@@ -762,7 +763,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 border-b border-slate-800 pb-12 mb-8">
                 <!-- Колонка 1: Юлия Гарипова -->
                 <div class="bg-slate-800/40 p-8 rounded-2xl border border-slate-700/50">
-                    <h4 class="font-serif text-2xl font-bold text-white mb-1">Юлия Гарипова</h4>
+                    <h4 class="font-serif text-2xl font-medium text-white mb-1">Юлия Гарипова</h4>
                     <p class="text-lilac-300 font-medium mb-6">КПТ-терапевт</p>
                     <div class="flex space-x-4 mb-8">
                         <a href="https://www.instagram.com/yulia.garipova.psy/" target="_blank" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-deep-blue-900 transition-all">
@@ -782,8 +783,8 @@
 
                 <!-- Колонка 2: Дарья Плахина -->
                 <div class="bg-slate-800/40 p-8 rounded-2xl border border-slate-700/50">
-                    <h4 class="font-serif text-2xl font-bold text-white mb-1">Дарья Плахина</h4>
-                    <p class="text-blue-300 font-medium mb-6">Биолог</p>
+                    <h4 class="font-serif text-2xl font-medium text-white mb-1">Дарья Плахина</h4>
+                    <p class="text-slate-500 font-medium mb-6">Биолог</p>
                     <div class="flex space-x-4 mb-8">
                         <a href="https://www.instagram.com/bioplakhina/" target="_blank" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 hover:text-white hover:bg-deep-blue-900 transition-all">
                             <span class="sr-only">Instagram</span>
@@ -802,7 +803,7 @@
             </div>
 
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 text-center md:text-left">
-                <span class="font-serif text-xl font-bold text-white tracking-tight block">Лекторий Юлии и
+                <span class="font-serif text-xl font-medium text-white tracking-tight block">Лекторий Юлии и
                     Дарьи</span>
                 <p class="text-sm text-slate-500">© 2026 Все права защищены. Самозанятая Плахина Д.О.</p>
             </div>
