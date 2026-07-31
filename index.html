@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>На стыке | Биология • Психология</title>
-    
+
     <!-- Подключение шрифтов Inter (основной) и Merriweather (заголовки) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap"
+        rel="stylesheet">
+
     <!-- Подключение Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -46,11 +49,17 @@
         }
     </script>
 </head>
-<body class="bg-ice-50 text-slate-800 font-sans antialiased relative overflow-x-hidden selection:bg-deep-blue-900 selection:text-white">
+
+<body
+    class="bg-ice-50 text-slate-800 font-sans antialiased relative overflow-x-hidden selection:bg-deep-blue-900 selection:text-white">
 
     <!-- Фоновые декоративные пятна -->
-    <div class="fixed top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-lilac-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 z-[-1] pointer-events-none"></div>
-    <div class="fixed top-[40%] right-[-10%] w-[30vw] h-[50vw] bg-purple-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 z-[-1] pointer-events-none"></div>
+    <div
+        class="fixed top-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-lilac-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 z-[-1] pointer-events-none">
+    </div>
+    <div
+        class="fixed top-[40%] right-[-10%] w-[30vw] h-[50vw] bg-purple-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 z-[-1] pointer-events-none">
+    </div>
 
     <!-- 1. Header (Меню) -->
     <header class="w-full bg-ice-50/80 backdrop-blur-md fixed top-0 z-50">
@@ -58,36 +67,50 @@
             <div class="flex justify-between items-center h-20 border-b border-lilac-100">
                 <div class="flex-shrink-0">
                     <a href="#" class="font-serif text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
-                        На стыке | <span class="text-deep-blue-900 not-italic whitespace-nowrap">Биология • Психология</span>
+                        На стыке | <span class="text-deep-blue-900 not-italic whitespace-nowrap">Биология •
+                            Психология</span>
                     </a>
                 </div>
-                
+
                 <!-- Десктопное меню -->
                 <nav class="hidden md:flex space-x-6 sm:space-x-8">
-                    <a href="#about" class="text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-sm tracking-wide">Кто мы</a>
-                    <a href="#bot" class="text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-sm tracking-wide">Telegram-бот</a>
-                    <a href="#first-aid" class="text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-sm tracking-wide">Аптечка</a>
+                    <a href="#about"
+                        class="text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-sm tracking-wide">Кто
+                        мы</a>
+                    <a href="#bot"
+                        class="text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-sm tracking-wide">Telegram-бот</a>
+                    <a href="#first-aid"
+                        class="text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-sm tracking-wide">Аптечка</a>
                 </nav>
 
                 <!-- Бургер кнопка -->
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-deep-blue-900 focus:outline-none transition-colors">
-                        <svg id="icon-burger" class="w-6 h-6 block" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <button id="mobile-menu-btn"
+                        class="text-slate-600 hover:text-deep-blue-900 focus:outline-none transition-colors">
+                        <svg id="icon-burger" class="w-6 h-6 block" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
-                        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
                     </button>
                 </div>
             </div>
-            
+
             <!-- Выпадающее мобильное меню -->
             <div id="mobile-menu" class="hidden md:hidden bg-ice-50/95 backdrop-blur-md border-b border-lilac-100">
                 <nav class="flex flex-col px-4 pt-2 pb-4 space-y-2">
-                    <a href="#about" class="mobile-link text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-base py-2">Кто мы</a>
-                    <a href="#bot" class="mobile-link text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-base py-2">Telegram-бот</a>
-                    <a href="#first-aid" class="mobile-link text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-base py-2">Аптечка</a>
+                    <a href="#about"
+                        class="mobile-link text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-base py-2">Кто
+                        мы</a>
+                    <a href="#bot"
+                        class="mobile-link text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-base py-2">Telegram-бот</a>
+                    <a href="#first-aid"
+                        class="mobile-link text-slate-600 hover:text-deep-blue-900 font-medium transition-colors text-base py-2">Аптечка</a>
                 </nav>
             </div>
         </div>
@@ -101,10 +124,16 @@
                     Лекции о мозге и психике.
                 </h1>
                 <p class="text-base sm:text-lg text-slate-600 font-light leading-relaxed mb-10">
-                    Мы объединяем нейробиологию и психотерапию. Простым языком рассказываем, как справляться с тревогой, выгоранием и СДВГ. Приходите на живые встречи в Черногории, смотрите трансляции или заглядывайте в наши блоги и на YouTube.
+                    Мы объединяем нейробиологию и психотерапию. Простым языком рассказываем, как справляться с тревогой,
+                    выгоранием и СДВГ. Приходите на живые встречи в Черногории, смотрите трансляции или заглядывайте в
+                    наши блоги и на YouTube.
                 </p>
-                <a href="https://youtube.com" target="_blank" class="inline-flex items-center justify-center bg-deep-blue-900 text-white font-medium px-8 py-4 rounded-full hover:bg-blue-800 transition-colors shadow-sm text-sm sm:text-base">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.86-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M9.996,15.005l0-6.01l5.518,3.005L9.996,15.005z"/></svg>
+                <a href="https://youtube.com" target="_blank"
+                    class="inline-flex items-center justify-center bg-deep-blue-900 text-white font-medium px-8 py-4 rounded-full hover:bg-blue-800 transition-colors shadow-sm text-sm sm:text-base">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M21.582,6.186c-0.23-0.86-0.908-1.538-1.768-1.768C18.254,4,12,4,12,4S5.746,4,4.186,4.418c-0.86,0.23-1.538,0.908-1.768,1.768C2,7.746,2,12,2,12s0,4.254,0.418,5.814c0.23,0.86,0.908,1.538,1.768,1.768C5.746,20,12,20,12,20s6.254,0,7.814-0.418c0.86-0.23,1.538-0.908,1.768-1.768C22,16.254,22,12,22,12S22,7.746,21.582,6.186z M9.996,15.005l0-6.01l5.518,3.005L9.996,15.005z" />
+                    </svg>
                     Смотреть наш YouTube
                 </a>
             </div>
@@ -113,17 +142,25 @@
         <!-- 3. Блок "Кто мы" (ПОД ТЕКСТОМ, С ПОЛОСОЙ) -->
         <section id="about" class="pb-16 md:pb-24 px-4 sm:px-8 lg:px-12 max-w-5xl mx-auto relative z-10">
             <div class="grid grid-cols-2 gap-4 md:gap-0 relative h-full">
-                
+
                 <!-- Левая колонка (Дарья) -->
-                <div class="flex flex-col items-center text-center group pr-2 md:pr-12 border-r border-lilac-100 h-full">
+                <div
+                    class="flex flex-col items-center text-center group pr-2 md:pr-12 border-r border-lilac-100 h-full">
                     <!-- Круглое фото -->
-                    <div class="w-24 h-24 md:w-48 md:h-48 rounded-full bg-lilac-100 flex items-center justify-center text-slate-400 font-medium text-[0.6rem] md:text-xs mb-3 shadow-md p-2 md:p-4 transition-transform duration-500 group-hover:scale-105 text-center leading-tight">
+                    <div
+                        class="w-24 h-24 md:w-48 md:h-48 rounded-full bg-lilac-100 flex items-center justify-center text-slate-400 font-medium text-[0.6rem] md:text-xs mb-3 shadow-md p-2 md:p-4 transition-transform duration-500 group-hover:scale-105 text-center leading-tight">
                         [ФОТО: Даша, смотрит вправо]
                     </div>
                     <span class="block font-medium text-lg mb-2 text-slate-900">Дарья Плахина</span>
-                    <p class="text-sm text-slate-600 mb-4 px-1 md:px-0 flex-grow"><strong class="font-bold text-deep-blue-900">Биология тела.</strong> Разбираем тревогу и СДВГ на молекулы.</p>
-                    <a href="https://www.instagram.com/bioplakhina/" target="_blank" class="inline-flex items-center justify-center mt-auto border border-deep-blue-900 text-deep-blue-900 bg-transparent hover:bg-deep-blue-900 hover:text-white rounded-full px-4 md:px-6 py-1.5 md:py-2 text-sm font-medium transition-colors duration-300 w-full sm:w-auto">
-                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2.163c3.204,0,3.584,0.012,4.85,0.07c1.366,0.062,2.633,0.344,3.608,1.319c0.975,0.975,1.257,2.242,1.319,3.608c0.058,1.266,0.07,1.646,0.07,4.85s-0.012,3.584-0.07,4.85c-0.062,1.366-0.344,2.633-1.319,3.608c-0.975,0.975-2.242,1.257-3.608,1.319c-1.266,0.058-1.646,0.07-4.85,0.07s-3.584-0.012-4.85-0.07c-1.366-0.062-2.633-0.344-3.608-1.319c-0.975-0.975-1.257-2.242-1.319-3.608c-0.058-1.266-0.07-1.646-0.07-4.85s0.012-3.584,0.07-4.85c0.062-1.366,0.344-2.633,1.319-3.608C3.515,2.507,4.782,2.225,6.148,2.163C7.414,2.105,7.794,2.163,12,2.163 M12,0C8.741,0,8.333,0.014,7.053,0.072C2.695,0.272,0.272,2.695,0.072,7.053C0.014,8.333,0,8.741,0,12c0,3.259,0.014,3.667,0.072,4.947c0.2,4.358,2.623,6.781,6.981,6.981C8.333,23.986,8.741,24,12,24c3.259,0,3.667-0.014,4.947-0.072c4.358-0.2,6.781-2.623,6.981-6.981C23.986,15.667,24,15.259,24,12c0-3.259-0.014-3.667-0.072-4.947c-0.2-4.358-2.623-6.781-6.981-6.981C15.667,0.014,15.259,0,12,0z M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162c3.403,0,6.162-2.759,6.162-6.162C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z M18.406,4.155c-0.885,0-1.604,0.719-1.604,1.604c0,0.885,0.719,1.604,1.604,1.604c0.885,0,1.604-0.719,1.604-1.604C20.01,4.874,19.29,4.155,18.406,4.155z"/></svg>
+                    <p class="text-sm text-slate-600 mb-4 px-1 md:px-0 flex-grow"><strong
+                            class="font-bold text-deep-blue-900">Биология тела.</strong> Разбираем тревогу и СДВГ на
+                        молекулы.</p>
+                    <a href="https://www.instagram.com/bioplakhina/" target="_blank"
+                        class="inline-flex items-center justify-center mt-auto border border-deep-blue-900 text-deep-blue-900 bg-transparent hover:bg-deep-blue-900 hover:text-white rounded-full px-4 md:px-6 py-1.5 md:py-2 text-sm font-medium transition-colors duration-300 w-full sm:w-auto">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12,2.163c3.204,0,3.584,0.012,4.85,0.07c1.366,0.062,2.633,0.344,3.608,1.319c0.975,0.975,1.257,2.242,1.319,3.608c0.058,1.266,0.07,1.646,0.07,4.85s-0.012,3.584-0.07,4.85c-0.062,1.366-0.344,2.633-1.319,3.608c-0.975,0.975-2.242,1.257-3.608,1.319c-1.266,0.058-1.646,0.07-4.85,0.07s-3.584-0.012-4.85-0.07c-1.366-0.062-2.633-0.344-3.608-1.319c-0.975-0.975-1.257-2.242-1.319-3.608c-0.058-1.266-0.07-1.646-0.07-4.85s0.012-3.584,0.07-4.85c0.062-1.366,0.344-2.633,1.319-3.608C3.515,2.507,4.782,2.225,6.148,2.163C7.414,2.105,7.794,2.163,12,2.163 M12,0C8.741,0,8.333,0.014,7.053,0.072C2.695,0.272,0.272,2.695,0.072,7.053C0.014,8.333,0,8.741,0,12c0,3.259,0.014,3.667,0.072,4.947c0.2,4.358,2.623,6.781,6.981,6.981C8.333,23.986,8.741,24,12,24c3.259,0,3.667-0.014,4.947-0.072c4.358-0.2,6.781-2.623,6.981-6.981C23.986,15.667,24,15.259,24,12c0-3.259-0.014-3.667-0.072-4.947c-0.2-4.358-2.623-6.781-6.981-6.981C15.667,0.014,15.259,0,12,0z M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162c3.403,0,6.162-2.759,6.162-6.162C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z M18.406,4.155c-0.885,0-1.604,0.719-1.604,1.604c0,0.885,0.719,1.604,1.604,1.604c0.885,0,1.604-0.719,1.604-1.604C20.01,4.874,19.29,4.155,18.406,4.155z" />
+                        </svg>
                         Блог Дарьи
                     </a>
                 </div>
@@ -131,13 +168,20 @@
                 <!-- Правая колонка (Юлия) -->
                 <div class="flex flex-col items-center text-center group pl-2 md:pl-12 h-full">
                     <!-- Круглое фото -->
-                    <div class="w-24 h-24 md:w-48 md:h-48 rounded-full bg-lilac-100 flex items-center justify-center text-slate-400 font-medium text-[0.6rem] md:text-xs mb-3 shadow-md p-2 md:p-4 transition-transform duration-500 group-hover:scale-105 text-center leading-tight">
-                        [ФОТО: Юля, смотрит влево]
+                    <div
+                        class="w-24 h-24 md:w-48 md:h-48 rounded-full bg-lilac-100 flex items-center justify-center text-slate-400 font-medium text-[0.6rem] md:text-xs mb-3 shadow-md transition-transform duration-500 group-hover:scale-105 text-center leading-tight">
+                        <img src="10.png" alt="Юлия Гарипова" class="w-full h-full object-cover rounded-full" />
                     </div>
                     <span class="block font-medium text-lg mb-2 text-slate-900">Юлия Гарипова</span>
-                    <p class="text-sm text-slate-600 mb-4 px-1 md:px-0 flex-grow"><strong class="font-bold text-deep-blue-900">Психология эмоций.</strong> Выстраиваем опоры и возвращаем контроль.</p>
-                    <a href="https://www.instagram.com/yulia.garipova.psy" target="_blank" class="inline-flex items-center justify-center mt-auto border border-deep-blue-900 text-deep-blue-900 bg-transparent hover:bg-deep-blue-900 hover:text-white rounded-full px-4 md:px-6 py-1.5 md:py-2 text-sm font-medium transition-colors duration-300 w-full sm:w-auto">
-                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2.163c3.204,0,3.584,0.012,4.85,0.07c1.366,0.062,2.633,0.344,3.608,1.319c0.975,0.975,1.257,2.242,1.319,3.608c0.058,1.266,0.07,1.646,0.07,4.85s-0.012,3.584-0.07,4.85c-0.062,1.366-0.344,2.633-1.319,3.608c-0.975,0.975-2.242,1.257-3.608,1.319c-1.266,0.058-1.646,0.07-4.85,0.07s-3.584-0.012-4.85-0.07c-1.366-0.062-2.633-0.344-3.608-1.319c-0.975-0.975-1.257-2.242-1.319-3.608c-0.058-1.266-0.07-1.646-0.07-4.85s0.012-3.584,0.07-4.85c0.062-1.366,0.344-2.633,1.319-3.608C3.515,2.507,4.782,2.225,6.148,2.163C7.414,2.105,7.794,2.163,12,2.163 M12,0C8.741,0,8.333,0.014,7.053,0.072C2.695,0.272,0.272,2.695,0.072,7.053C0.014,8.333,0,8.741,0,12c0,3.259,0.014,3.667,0.072,4.947c0.2,4.358,2.623,6.781,6.981,6.981C8.333,23.986,8.741,24,12,24c3.259,0,3.667-0.014,4.947-0.072c4.358-0.2,6.781-2.623,6.981-6.981C23.986,15.667,24,15.259,24,12c0-3.259-0.014-3.667-0.072-4.947c-0.2-4.358-2.623-6.781-6.981-6.981C15.667,0.014,15.259,0,12,0z M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162c3.403,0,6.162-2.759,6.162-6.162C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z M18.406,4.155c-0.885,0-1.604,0.719-1.604,1.604c0,0.885,0.719,1.604,1.604,1.604c0.885,0,1.604-0.719,1.604-1.604C20.01,4.874,19.29,4.155,18.406,4.155z"/></svg>
+                    <p class="text-sm text-slate-600 mb-4 px-1 md:px-0 flex-grow"><strong
+                            class="font-bold text-deep-blue-900">Психология эмоций.</strong> Выстраиваем опоры и
+                        возвращаем контроль.</p>
+                    <a href="https://www.instagram.com/yulia.garipova.psy" target="_blank"
+                        class="inline-flex items-center justify-center mt-auto border border-deep-blue-900 text-deep-blue-900 bg-transparent hover:bg-deep-blue-900 hover:text-white rounded-full px-4 md:px-6 py-1.5 md:py-2 text-sm font-medium transition-colors duration-300 w-full sm:w-auto">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M12,2.163c3.204,0,3.584,0.012,4.85,0.07c1.366,0.062,2.633,0.344,3.608,1.319c0.975,0.975,1.257,2.242,1.319,3.608c0.058,1.266,0.07,1.646,0.07,4.85s-0.012,3.584-0.07,4.85c-0.062,1.366-0.344,2.633-1.319,3.608c-0.975,0.975-2.242,1.257-3.608,1.319c-1.266,0.058-1.646,0.07-4.85,0.07s-3.584-0.012-4.85-0.07c-1.366-0.062-2.633-0.344-3.608-1.319c-0.975-0.975-1.257-2.242-1.319-3.608c-0.058-1.266-0.07-1.646-0.07-4.85s0.012-3.584,0.07-4.85c0.062-1.366,0.344-2.633,1.319-3.608C3.515,2.507,4.782,2.225,6.148,2.163C7.414,2.105,7.794,2.163,12,2.163 M12,0C8.741,0,8.333,0.014,7.053,0.072C2.695,0.272,0.272,2.695,0.072,7.053C0.014,8.333,0,8.741,0,12c0,3.259,0.014,3.667,0.072,4.947c0.2,4.358,2.623,6.781,6.981,6.981C8.333,23.986,8.741,24,12,24c3.259,0,3.667-0.014,4.947-0.072c4.358-0.2,6.781-2.623,6.981-6.981C23.986,15.667,24,15.259,24,12c0-3.259-0.014-3.667-0.072-4.947c-0.2-4.358-2.623-6.781-6.981-6.981C15.667,0.014,15.259,0,12,0z M12,5.838c-3.403,0-6.162,2.759-6.162,6.162c0,3.403,2.759,6.162,6.162,6.162c3.403,0,6.162-2.759,6.162-6.162C18.162,8.597,15.403,5.838,12,5.838z M12,16c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S14.209,16,12,16z M18.406,4.155c-0.885,0-1.604,0.719-1.604,1.604c0,0.885,0.719,1.604,1.604,1.604c0.885,0,1.604-0.719,1.604-1.604C20.01,4.874,19.29,4.155,18.406,4.155z" />
+                        </svg>
                         Блог Юлии
                     </a>
                 </div>
@@ -150,10 +194,15 @@
             <div class="bg-white/60 backdrop-blur-md rounded-3xl p-10 sm:p-16 shadow-lg border border-white">
                 <h2 class="font-serif text-3xl sm:text-4xl text-slate-900 mb-6">Не теряйте нас.</h2>
                 <p class="text-slate-600 font-light leading-relaxed mb-10 max-w-xl mx-auto">
-                    Наш бот-напоминальщик работает без спама. Он просто сообщит вам о дате выхода новой лекции или оффлайн-встрече.
+                    Наш бот-напоминальщик работает без спама. Он просто сообщит вам о дате выхода новой лекции или
+                    оффлайн-встрече.
                 </p>
-                <a href="https://t.me/neuropsyandbio" target="_blank" class="inline-flex items-center justify-center bg-deep-blue-900 text-white font-medium px-10 py-4 rounded-full hover:bg-blue-800 transition-colors shadow-sm text-sm sm:text-base">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M20.665,3.717l-17.73,6.837c-1.21,0.486-1.203,1.161-0.222,1.462l4.552,1.42l10.532-6.645c0.498-0.303,0.953-0.14,0.579,0.192l-8.533,7.701l0.002,0l-0.002,0.001l-0.314,4.692c0.46,0,0.663-0.211,0.921-0.46l2.211-2.15l4.599,3.397c0.848,0.467,1.457,0.227,1.668-0.781l3.019-14.206C22.256,3.904,21.474,3.336,20.665,3.717z"/></svg>
+                <a href="https://t.me/neuropsyandbio" target="_blank"
+                    class="inline-flex items-center justify-center bg-deep-blue-900 text-white font-medium px-10 py-4 rounded-full hover:bg-blue-800 transition-colors shadow-sm text-sm sm:text-base">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M20.665,3.717l-17.73,6.837c-1.21,0.486-1.203,1.161-0.222,1.462l4.552,1.42l10.532-6.645c0.498-0.303,0.953-0.14,0.579,0.192l-8.533,7.701l0.002,0l-0.002,0.001l-0.314,4.692c0.46,0,0.663-0.211,0.921-0.46l2.211-2.15l4.599,3.397c0.848,0.467,1.457,0.227,1.668-0.781l3.019-14.206C22.256,3.904,21.474,3.336,20.665,3.717z" />
+                    </svg>
                     Подключить бота
                 </a>
             </div>
@@ -163,22 +212,26 @@
         <section id="first-aid" class="py-24 px-6 sm:px-8 lg:px-12 max-w-5xl mx-auto text-center relative z-10">
             <h2 class="font-serif text-3xl sm:text-4xl text-slate-900 mb-4">Интерактивная аптечка</h2>
             <p class="text-base sm:text-lg text-slate-600 font-light mb-10">Выберите ваше состояние прямо сейчас:</p>
-            
+
             <!-- Кнопки состояний -->
             <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <button class="bg-transparent border border-deep-blue-900 text-deep-blue-900 hover:bg-deep-blue-900 hover:text-white transition-colors duration-300 font-medium px-6 py-2.5 rounded-full shadow-sm text-sm">
+                <button
+                    class="bg-transparent border border-deep-blue-900 text-deep-blue-900 hover:bg-deep-blue-900 hover:text-white transition-colors duration-300 font-medium px-6 py-2.5 rounded-full shadow-sm text-sm">
                     Тревога
                 </button>
-                <button class="bg-transparent border border-deep-blue-900 text-deep-blue-900 hover:bg-deep-blue-900 hover:text-white transition-colors duration-300 font-medium px-6 py-2.5 rounded-full shadow-sm text-sm">
+                <button
+                    class="bg-transparent border border-deep-blue-900 text-deep-blue-900 hover:bg-deep-blue-900 hover:text-white transition-colors duration-300 font-medium px-6 py-2.5 rounded-full shadow-sm text-sm">
                     СДВГ / Расфокус
                 </button>
-                <button class="bg-transparent border border-deep-blue-900 text-deep-blue-900 hover:bg-deep-blue-900 hover:text-white transition-colors duration-300 font-medium px-6 py-2.5 rounded-full shadow-sm text-sm">
+                <button
+                    class="bg-transparent border border-deep-blue-900 text-deep-blue-900 hover:bg-deep-blue-900 hover:text-white transition-colors duration-300 font-medium px-6 py-2.5 rounded-full shadow-sm text-sm">
                     Паника
                 </button>
             </div>
 
             <!-- Площадка для геймдева -->
-            <div id="game-container" class="w-full h-96 bg-blue-50/50 rounded-3xl mt-8 shadow-inner border border-lilac-100 flex items-center justify-center">
+            <div id="game-container"
+                class="w-full h-96 bg-blue-50/50 rounded-3xl mt-8 shadow-inner border border-lilac-100 flex items-center justify-center">
                 <p class="text-slate-400 text-sm italic">[Место для интерактива]</p>
             </div>
         </section>
@@ -219,4 +272,5 @@
         });
     </script>
 </body>
+
 </html>
