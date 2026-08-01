@@ -215,7 +215,7 @@
 
             <!-- Кнопки состояний -->
             <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <button
+                <button id="btn-anxiety"
                     class="bg-transparent border border-deep-blue-900 text-deep-blue-900 hover:bg-deep-blue-900 hover:text-white transition-colors duration-300 font-medium px-6 py-2.5 rounded-full shadow-sm text-sm">
                     Тревога
                 </button>
@@ -231,8 +231,8 @@
 
             <!-- Площадка для геймдева -->
             <div id="game-container"
-                class="w-full h-96 bg-blue-50/50 rounded-3xl mt-8 shadow-inner border border-lilac-100 flex items-center justify-center">
-                <p class="text-slate-400 text-sm italic">[Место для интерактива]</p>
+                class="w-full h-96 bg-blue-50/50 rounded-3xl mt-8 shadow-inner border border-lilac-100 flex items-center justify-center relative overflow-hidden">
+                <p class="text-slate-400 text-sm italic">[Нажмите "Тревога", чтобы начать]</p>
             </div>
         </section>
 
@@ -270,6 +270,144 @@
                 }
             });
         });
+
+        // ==========================================
+        // Логика мини-игры "Ловец мыслей"
+        // ==========================================
+        const btnAnxiety = document.getElementById('btn-anxiety');
+        const gameContainer = document.getElementById('game-container');
+        
+        let spawnInterval;
+        let score = 0;
+        let activeThoughts = 0;
+        let isPlaying = false;
+        
+        const triggers = [
+            'А вдруг...',
+            'Я не справлюсь',
+            'Все смотрят',
+            'Я не успеваю',
+            'Опасно',
+            'Что они подумают?'
+        ];
+
+        function startAnxietyGame() {
+            if (isPlaying) return;
+            isPlaying = true;
+            score = 0;
+            activeThoughts = 0;
+            
+            // Очищаем контейнер и добавляем счетчик
+            gameContainer.innerHTML = `
+                <div id="score-display" class="absolute top-4 right-6 z-20 bg-white/80 backdrop-blur-sm px-4 py-1.5 rounded-full shadow-sm border border-sky-100">
+                    <span class="text-slate-600 font-medium text-sm">Поймано: 0 / 10</span>
+                </div>
+            `;
+            
+            spawnInterval = setInterval(spawnThought, 1500);
+        }
+
+        function spawnThought() {
+            if (activeThoughts >= 6) return;
+            
+            const thought = document.createElement('div');
+            const text = triggers[Math.floor(Math.random() * triggers.length)];
+            
+            thought.textContent = text;
+            thought.className = 'absolute cursor-pointer transition duration-500 ease-out select-none bg-white text-slate-600 shadow-md animate-pulse hover:shadow-lg hover:scale-105 rounded-full px-4 py-2 font-medium text-sm z-10';
+            
+            const containerRect = gameContainer.getBoundingClientRect();
+            let currentX = Math.floor(Math.random() * (containerRect.width - 250)) + 20;
+            const y = Math.floor(Math.random() * (containerRect.height - 60)) + 20;
+            
+            thought.style.left = `${currentX}px`;
+            thought.style.top = `${y}px`;
+            
+            let isCaught = false;
+            let dirX = Math.random() > 0.5 ? 1 : -1;
+            let speed = (Math.random() * 0.3) + 0.2; // медленная скорость
+            let animationFrameId;
+
+            function move() {
+                if (isCaught || !isPlaying) return;
+                currentX += dirX * speed;
+                
+                if (currentX < 20) {
+                    currentX = 20;
+                    dirX = 1;
+                } else if (currentX > containerRect.width - 180) {
+                    currentX = containerRect.width - 180;
+                    dirX = -1;
+                }
+                
+                thought.style.left = `${currentX}px`;
+                animationFrameId = requestAnimationFrame(move);
+            }
+            
+            animationFrameId = requestAnimationFrame(move);
+            
+            thought.addEventListener('click', () => {
+                if (isCaught) return;
+                isCaught = true;
+                cancelAnimationFrame(animationFrameId);
+                
+                thought.className = 'absolute transition duration-500 ease-out select-none bg-emerald-100 text-emerald-700 scale-110 opacity-0 rounded-full px-4 py-2 font-medium text-sm z-10';
+                thought.textContent = 'Отпускаю...';
+                
+                score++;
+                const scoreDisplay = document.getElementById('score-display');
+                if (scoreDisplay) {
+                    scoreDisplay.innerHTML = `<span class="text-slate-600 font-medium text-sm">Поймано: ${score} / 10</span>`;
+                }
+                
+                if (score >= 10) {
+                    endGame();
+                }
+                
+                setTimeout(() => {
+                    if (thought.parentNode) {
+                        thought.parentNode.removeChild(thought);
+                        activeThoughts--;
+                    }
+                }, 500);
+            });
+            
+            gameContainer.appendChild(thought);
+            activeThoughts++;
+        }
+
+        function endGame() {
+            clearInterval(spawnInterval);
+            isPlaying = false;
+            
+            gameContainer.innerHTML = `
+                <div id="victory-screen" class="absolute inset-0 flex flex-col items-center justify-center bg-sky-50/90 backdrop-blur-sm z-30 transition-all duration-700 opacity-0 translate-y-4">
+                    <h3 class="font-serif text-2xl md:text-3xl text-slate-800 mb-4 text-center px-4">
+                        Выдыхайте.
+                    </h3>
+                    <p class="text-slate-600 text-center max-w-sm mb-8 px-4 font-light">
+                        Вы управляете своими мыслями, а не они вами.
+                    </p>
+                    <button id="btn-restart" class="bg-deep-blue-900 text-white px-6 py-2.5 rounded-full hover:bg-blue-800 transition-colors shadow-sm font-medium">
+                        Повторить
+                    </button>
+                </div>
+            `;
+            
+            setTimeout(() => {
+                const vs = document.getElementById('victory-screen');
+                if (vs) {
+                    vs.classList.remove('opacity-0', 'translate-y-4');
+                    vs.classList.add('opacity-100', 'translate-y-0');
+                }
+            }, 50);
+            
+            document.getElementById('btn-restart').addEventListener('click', startAnxietyGame);
+        }
+
+        if (btnAnxiety) {
+            btnAnxiety.addEventListener('click', startAnxietyGame);
+        }
     </script>
 </body>
 
