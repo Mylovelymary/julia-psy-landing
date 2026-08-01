@@ -62,9 +62,9 @@
     </div>
 
     <!-- 1. Header (Меню) -->
-    <header class="w-full bg-ice-50/80 backdrop-blur-md fixed top-0 z-50">
+    <header class="fixed w-full z-50 bg-white/70 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-            <div class="flex justify-between items-center h-20 border-b border-lilac-100">
+            <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0">
                     <a href="#" class="font-serif text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
                         На стыке | <span class="text-deep-blue-900 not-italic whitespace-nowrap">Биология •
@@ -145,7 +145,7 @@
 
                 <!-- Левая колонка (Дарья) -->
                 <div
-                    class="flex flex-col items-center text-center group pr-2 md:pr-12 border-r border-lilac-100 h-full">
+                    class="flex flex-col items-center text-center group pr-2 md:pr-12 border-r border-lilac-100 h-full transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl md:rounded-3xl p-2 md:p-4 hover:bg-white/40">
                     <!-- Круглое фото -->
                     <div
                         class="w-24 h-24 md:w-48 md:h-48 rounded-full bg-lilac-100 flex items-center justify-center text-slate-400 font-medium text-[0.6rem] md:text-xs mb-3 shadow-md p-2 md:p-4 transition-transform duration-500 group-hover:scale-105 text-center leading-tight">
@@ -166,7 +166,7 @@
                 </div>
 
                 <!-- Правая колонка (Юлия) -->
-                <div class="flex flex-col items-center text-center group pl-2 md:pl-12 h-full">
+                <div class="flex flex-col items-center text-center group pl-2 md:pl-12 h-full transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl rounded-2xl md:rounded-3xl p-2 md:p-4 hover:bg-white/40">
                     <!-- Круглое фото -->
                     <div
                         class="w-24 h-24 md:w-48 md:h-48 rounded-full bg-lilac-100 flex items-center justify-center text-slate-400 font-medium text-[0.6rem] md:text-xs mb-3 shadow-md transition-transform duration-500 group-hover:scale-105 text-center leading-tight">
@@ -191,7 +191,7 @@
 
         <!-- 4. Блок "Telegram-бот" (Glassmorphism) -->
         <section id="bot" class="py-16 px-6 sm:px-8 lg:px-12 max-w-4xl mx-auto text-center relative z-10">
-            <div class="bg-white/60 backdrop-blur-md rounded-3xl p-10 sm:p-16 shadow-lg border border-white">
+            <div class="bg-white/60 backdrop-blur-md rounded-3xl p-10 sm:p-16 shadow-lg border border-white transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
                 <h2 class="font-serif text-3xl sm:text-4xl text-slate-900 mb-6">Не теряйте нас.</h2>
                 <p class="text-slate-600 font-light leading-relaxed mb-10 max-w-xl mx-auto">
                     Наш бот-напоминальщик работает без спама. Он просто сообщит вам о дате выхода новой лекции или
@@ -283,19 +283,49 @@
         let isPlaying = false;
         
         const triggers = [
-            'А вдруг...',
-            'Я не справлюсь',
-            'Все смотрят',
-            'Я не успеваю',
-            'Опасно',
-            'Что они подумают?'
+            'Я всё испорчу',
+            'Они поймут, что я ничего не знаю',
+            'Я хуже других',
+            'Надо было сделать идеально или никак',
+            'Я опять трачу время впустую',
+            'Я выгляжу глупо',
+            'А вдруг случится страшное?',
+            'Это никогда не закончится',
+            'Я не справлюсь с этим',
+            'Всё идет не по плану',
+            'Что, если это ошибка?',
+            'Что они обо мне подумают?',
+            'Я сказал какую-то глупость',
+            'Надо было промолчать',
+            'Они наверняка на меня обиделись',
+            'Я всем только мешаю'
         ];
+        
+        let thoughtDeck = [];
+
+        function shuffle(array) {
+            let currentIndex = array.length, randomIndex;
+            while (currentIndex !== 0) {
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex--;
+                [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+            }
+            return array;
+        }
+
+        function drawThought() {
+            if (thoughtDeck.length === 0) {
+                thoughtDeck = shuffle([...triggers]);
+            }
+            return thoughtDeck.pop();
+        }
 
         function startAnxietyGame() {
             if (isPlaying) return;
             isPlaying = true;
             score = 0;
             activeThoughts = 0;
+            thoughtDeck = [];
             
             // Очищаем контейнер и добавляем счетчик
             gameContainer.innerHTML = `
@@ -311,7 +341,7 @@
             if (activeThoughts >= 6) return;
             
             const thought = document.createElement('div');
-            const text = triggers[Math.floor(Math.random() * triggers.length)];
+            const text = drawThought();
             
             thought.textContent = text;
             thought.className = 'absolute cursor-pointer transition duration-500 ease-out select-none bg-white text-slate-600 shadow-md animate-pulse hover:shadow-lg hover:scale-105 rounded-full px-4 py-2 font-medium text-sm z-10';
