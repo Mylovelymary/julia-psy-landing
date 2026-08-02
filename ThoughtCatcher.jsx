@@ -1,15 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-
-const triggers = [
-  'А вдруг...',
-  'Я не справлюсь',
-  'Все смотрят',
-  'Я не успеваю',
-  'Опасно',
-  'Что они подумают?'
-];
+import { triggers } from './triggers';
 
 export default function ThoughtCatcher() {
   const [thoughts, setThoughts] = useState([]);
@@ -27,6 +19,25 @@ export default function ThoughtCatcher() {
     return { x, y };
   };
 
+  const deckRef = useRef([]);
+
+  const shuffle = (array) => {
+    let currentIndex = array.length, randomIndex;
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+      [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+    }
+    return array;
+  };
+
+  const drawThought = useCallback(() => {
+    if (deckRef.current.length === 0) {
+      deckRef.current = shuffle([...triggers]);
+    }
+    return deckRef.current.pop();
+  }, []);
+
   // Спавн новых мыслей
   useEffect(() => {
     if (isGameOver) return;
@@ -39,7 +50,7 @@ export default function ThoughtCatcher() {
 
         const newThought = {
           id: Date.now() + Math.random(),
-          text: triggers[Math.floor(Math.random() * triggers.length)],
+          text: drawThought(),
           position: getRandomPosition(),
           isCaught: false,
         };
@@ -49,7 +60,7 @@ export default function ThoughtCatcher() {
     }, 1500);
 
     return () => clearInterval(spawnInterval);
-  }, [isGameOver]);
+  }, [isGameOver, drawThought]);
 
   // Обработчик клика (поимка мысли)
   const catchThought = useCallback((id) => {
@@ -80,6 +91,7 @@ export default function ThoughtCatcher() {
     setScore(0);
     setThoughts([]);
     setIsGameOver(false);
+    deckRef.current = [];
   };
 
   return (
